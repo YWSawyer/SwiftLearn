@@ -9,37 +9,37 @@
 import UIKit
 
 class ContainerView: UIView {
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
 //        NSLog("ContainerView is clicked...")
         for subview: UIView in self.subviews {
 //            print("subviews count is :\(subviews.count)")
             if let btn = subview as? UIButton {
                 if btn.tag == 200 {
-                    let btnPoint: CGPoint = btn.convertPoint(point, fromView: self)
-                    if btn.pointInside(btnPoint, withEvent: event) {
+                    let btnPoint: CGPoint = btn.convert(point, from: self)
+                    if btn.point(inside: btnPoint, with: event) {
                         return btn
                     }
                 }
             }
         }
-        return super.hitTest(point, withEvent: event)
+        return super.hitTest(point, with: event)
     }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         NSLog("Container touchesBegan activity ...")
-        nextResponder()?.touchesBegan(touches, withEvent: event)
+        next?.touchesBegan(touches, with: event)
     }
 }
 class ViewB: UIView {
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         NSLog("viewB is clicked ...")
-        nextResponder()?.touchesBegan(touches, withEvent: event)
+        next?.touchesBegan(touches, with: event)
     }
 }
 
 class ViewA: UIView {
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         NSLog("viewA is clicked ...")
-        nextResponder()?.touchesBegan(touches, withEvent: event)
+        next?.touchesBegan(touches, with: event)
     }
 }
 class ViewController: UIViewController {
@@ -47,33 +47,33 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let containerView: ContainerView = ContainerView(frame: UIScreen.mainScreen().bounds)
-        containerView.backgroundColor = UIColor.greenColor()
+        let containerView: ContainerView = ContainerView(frame: UIScreen.main.bounds)
+        containerView.backgroundColor = UIColor.green
         self.view.addSubview(containerView)
         
         
         
-        let btnA: UIButton = UIButton(type: UIButtonType.Custom)
+        let btnA: UIButton = UIButton(type: UIButtonType.custom)
         btnA.frame = CGRect(x: 70, y: 100, width: 150, height: 80)
-        btnA.backgroundColor = UIColor.grayColor()
+        btnA.backgroundColor = UIColor.gray
         btnA.tag = 200
-        btnA.addTarget(self, action: "btnAAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        btnA.addTarget(self, action: #selector(ViewController.btnAAction(_:)), for: UIControlEvents.touchUpInside)
         containerView.addSubview(btnA)
         
         let viewA: ViewA = ViewA(frame: CGRect(x: 20, y: 80, width: 280, height: 400))
-        viewA.backgroundColor = UIColor.lightGrayColor()
+        viewA.backgroundColor = UIColor.lightGray
         containerView.addSubview(viewA)
         
         let viewB: ViewB = ViewB(frame: CGRect(x: 20, y: 150, width: 200, height: 200))
-        viewB.backgroundColor = UIColor.blueColor()
-        viewB.userInteractionEnabled = true
+        viewB.backgroundColor = UIColor.blue
+        viewB.isUserInteractionEnabled = true
         viewA.addSubview(viewB)
         
-        let btnB: UIButton = UIButton(type: UIButtonType.Custom)
-        btnB.frame = CGRectMake(20, 20, 150, 80)
+        let btnB: UIButton = UIButton(type: UIButtonType.custom)
+        btnB.frame = CGRect(x: 20, y: 20, width: 150, height: 80)
         btnB.tag = 300
-        btnB.backgroundColor = UIColor.brownColor()
-        btnB.addTarget(self, action: "btnBAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        btnB.backgroundColor = UIColor.brown
+        btnB.addTarget(self, action: #selector(ViewController.btnBAction(_:)), for: UIControlEvents.touchUpInside)
         viewB.addSubview(btnB)
         
     
@@ -83,15 +83,15 @@ class ViewController: UIViewController {
         
     }
   
-    func btnAAction(btn: UIButton) {
+    func btnAAction(_ btn: UIButton) {
         NSLog("btnA is clicked ...")
     }
     
-    func btnBAction(btn: UIButton) {
+    func btnBAction(_ btn: UIButton) {
         NSLog("btnB is clicked...")
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         NSLog("ViewController is clicked...")
     }
     

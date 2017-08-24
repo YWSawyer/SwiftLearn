@@ -194,15 +194,18 @@
 					77ADE3B01C58E69700CB883B = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = HFZR6372DX;
+						LastSwiftMigration = 0830;
 					};
 					77ADE3C41C58E69700CB883B = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = HFZR6372DX;
+						LastSwiftMigration = 0830;
 						TestTargetID = 77ADE3B01C58E69700CB883B;
 					};
 					77ADE3CF1C58E69700CB883B = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = HFZR6372DX;
+						LastSwiftMigration = 0830;
 						TestTargetID = 77ADE3B01C58E69700CB883B;
 					};
 				};
@@ -404,6 +407,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epower.TouchTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -415,6 +419,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epower.TouchTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -426,6 +431,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epower.TouchTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TouchTest.app/TouchTest";
 			};
 			name = Debug;
@@ -438,6 +444,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epower.TouchTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TouchTest.app/TouchTest";
 			};
 			name = Release;
@@ -449,6 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epower.TouchTestUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TouchTest;
 				USES_XCTRUNNER = YES;
 			};
@@ -461,6 +469,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epower.TouchTestUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TouchTest;
 				USES_XCTRUNNER = YES;
 			};
@@ -485,6 +494,7 @@
 				77ADE3DB1C58E69700CB883B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77ADE3DC1C58E69700CB883B /* Build configuration list for PBXNativeTarget "TouchTestTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +503,7 @@
 				77ADE3DE1C58E69700CB883B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77ADE3DF1C58E69700CB883B /* Build configuration list for PBXNativeTarget "TouchTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +512,7 @@
 				77ADE3E11C58E69700CB883B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

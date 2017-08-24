@@ -10,9 +10,9 @@ import UIKit
 
 class ContainerView: UIView {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-//        NSLog("ContainerView is clicked...")
+        NSLog("ContainerView is clicked...")
         for subview: UIView in self.subviews {
-//            print("subviews count is :\(subviews.count)")
+            print("subviews count is :\(subviews.count)")
             if let btn = subview as? UIButton {
                 if btn.tag == 200 {
                     let btnPoint: CGPoint = btn.convert(point, from: self)
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         btnA.addTarget(self, action: #selector(ViewController.btnAAction(_:)), for: UIControlEvents.touchUpInside)
         containerView.addSubview(btnA)
         
-        let viewA: ViewA = ViewA(frame: CGRect(x: 20, y: 80, width: 280, height: 400))
+        let viewA: ViewA = ViewA(frame: CGRect(x: 60, y: 120, width: 280, height: 400))
         viewA.backgroundColor = UIColor.lightGray
         containerView.addSubview(viewA)
         
